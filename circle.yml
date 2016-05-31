@@ -6,13 +6,15 @@ machine:
 
 dependencies:
   pre:
+    - pip install --upgrade pip
     - pip install awsebcli
 
 test:
   override:
     - ./create-app.sh
-    - echo "AWSAccessKeyId=$AWS_ACCESS_KEY_ID" > .aws-credentials
-    - echo "AWSSecretKey=$AWS_SECRET_KEY" >> .aws-credentials
+    - echo ""[profile eb-cli]"" > .aws-credentials
+    - echo "aws_access_key_id = $AWS_ACCESS_KEY_ID" >> .aws-credentials
+    - echo "aws_secret_access_key = $AWS_SECRET_KEY" >> .aws-credentials
 
 deployment:
   prod:
