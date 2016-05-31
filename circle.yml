@@ -7,7 +7,7 @@ machine:
 dependencies:
   pre:
     - create-app.sh
-    - pip install awsebcli
+    - sudo pip install awsebcli
     - echo "AWSAccessKeyId=$AWS_ACCESS_KEY_ID" > .aws-credentials
     - echo "AWSSecretKey=$AWS_SECRET_KEY" >> .aws-credentials
 
