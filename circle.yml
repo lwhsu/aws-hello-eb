@@ -11,10 +11,10 @@ dependencies:
 
 test:
   override:
-    - ./create-app.sh
+    - true
 
 deployment:
   prod:
     branch: master
     commands:
-      - eb deploy
+      - ./deploy-app.sh
