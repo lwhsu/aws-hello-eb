@@ -6,14 +6,13 @@ machine:
 
 dependencies:
   pre:
-    - ./create-app.sh
     - sudo pip install awsebcli
-    - echo "AWSAccessKeyId=$AWS_ACCESS_KEY_ID" > .aws-credentials
-    - echo "AWSSecretKey=$AWS_SECRET_KEY" >> .aws-credentials
 
 test:
   override:
-    - true
+    - ./create-app.sh
+    - echo "AWSAccessKeyId=$AWS_ACCESS_KEY_ID" > .aws-credentials
+    - echo "AWSSecretKey=$AWS_SECRET_KEY" >> .aws-credentials
 
 deployment:
   prod:
