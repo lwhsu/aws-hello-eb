@@ -1,0 +1,9 @@
+branch-defaults:
+  master:
+    environment: test-env1
+global:
+  application_name: hello-eb-app
+  default_platform: Docker
+  default_region: us-west-2
+deploy:
+  artifact: app.zip
