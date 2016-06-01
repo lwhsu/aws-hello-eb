@@ -10,8 +10,12 @@ dependencies:
     - pip install awsebcli
 
 test:
-  override:
-    - ./build-docker.sh
+  pre:
+    - ./prepare-docker.sh
+    - docker build -t lwhsu/aws-hello-eb:$CIRCLE_SHA1 .
+  post:
+    - docker run -d -p 80:8080 lwhsu/aws-hello-eb:$CIRCLE_SHA1
+    - curl -v http://localhost/hello-ws/webapi/myresource
 
 deployment:
   prod:
