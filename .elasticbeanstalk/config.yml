@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: helloEbApp-env
+    environment: helloEbApp-env1
 global:
   application_name: hello-eb-app
   default_platform: Docker
